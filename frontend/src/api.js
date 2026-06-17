@@ -1,4 +1,6 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:5000/api'
+  : '/_/backend/api';
 
 // Helper to get headers with JWT token if it exists
 const getHeaders = (isJson = true) => {
